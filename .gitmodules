@@ -1,0 +1,6 @@
+[submodule "lua_scripts"]
+	path = lua_scripts
+	url = https://github.com/LuckyLuc96/lua_scripts
+[submodule "SQL/Dungeon-Quest-Pet"]
+	path = SQL/Dungeon-Quest-Pet
+	url = https://github.com/LuckyLuc96/Dungeon-Quest-Pet

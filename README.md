@@ -1,0 +1,1 @@
+This repo is just a way to consolidate the different smaller repos that I maintain for my azerothcore server.

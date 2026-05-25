@@ -9,6 +9,12 @@ INSERT INTO `gameobject` (guid, id, map, zoneId, areaId, spawnMask, phaseMask, p
 (@guidStartGameObject + 1, 191009, 0, 0, 0, 1, 1, 2356.03, -5686.13, 382.24, 4.3805, 0, 0, 0.814196, -0.58059, 300, 0, 1, "", NULL, "Orgrimmar Portal, Acherus Hold"),
 (@guidStartGameObject + 2, 176296, 0, 0, 0, 1, 1, 2333.82, -5657.84, 382.242, 3.32647, 0, 0, 0.995731, -0.0923067, 300, 0, 1, "", NULL, "Stormwind Portal, Acherus Hold");
 
+-- Dalaran portals in Stormwind and Orgrimmar (Mage quarters and valley of spirits)
+DELETE from `gameobject` where `id` = 202079 AND `map` = 1 OR `id` = 202079 AND `map` = 0;
+INSERT INTO `gameobject` (guid, id, map, zoneId, areaId, spawnMask, phaseMask, position_x, position_y, position_z, orientation, rotation0, rotation1, rotation2, rotation3, spawntimesecs, animprogress, state, ScriptName, VerifiedBuild, Comment) VALUES
+(@guidStartGameObject + 3, 202079, 1, 0, 0, 1, 1, 1462.23, -4185.91, 44.3303, 5.88119, 0, 0, 0.199648, -0.979868, 300, 0, 1, NULL, 'Dalaran Portal: Mage Quarters')
+(@guidStartGameObject + 4, 202079, 0, 0, 0, 1, 1, -9024.95, 880.566, 29.6206, 6.21387, 0, 0, 0.0346531, -0.999399, 300, 0, 1, NULL, 'Dalaran Portal: Valley of Spirits')
+
 -- NPCs
 --
 -- Transmog NPC in all the capital cities + Stonard/Theramore

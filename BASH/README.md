@@ -1,15 +1,14 @@
 # These are various shellscripts that I use for my server.
 
-## Please check all file path values located at the top of all the scripts. Also I use ninja instead of cmake. You'll need to install ninja to use my compliation scripts.
+## Please check all file path values located at the top of all the scripts.
 
 ## extract.sh
 
-actually goes in the game client folder and will copy the azerothcore extractors from acore, run them in the client, move those folders back to the azerothcore data and clean up. This isn't tested with having an existing data files in the server, so I suggest deleting the existing files first before running this.
-
-## rebuild-build.sh
-
-This one I use when I install or uninstall different plugins. Also works for fresh installs of azerothcore. This can be skipped if the only changes are git pulls are made for either c++ or sql changes are made, and you can go straight to recompile
+The script goes in the game client folder and will copy the extractors from the server. It will then run the extractors in the client, move those folders back to the server data directory and clean up. Before doing all this, it deletes your existing maps data. Please make sure you compiled the tools at the same time as the rest of the server, or you may end up with a mismatch between map data and what the server expects.
 
 ## recompile
+This will delete the build folder and rebuild it. Then it compiles with some basic settings, including the extractor tools.
 
-This is good after major and potentitally minor changes to plugins or server core code.
+I no longer use ninja but cmake again. Please check the directories used at the top of the script and adjust accordingly. Don't specify the "bin" folder at the end of the directory or you'll end up with "/bin/bin"
+
+If, like me, you walk away while compiling, you might have built the server but timed out on using your password to do the sudo make install command. Just cd to the build folder and type "sudo make install"

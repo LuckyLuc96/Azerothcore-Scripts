@@ -1,13 +1,16 @@
 #!/bin/bash
-DIR="/home/luc/server cores/azerothcore/env/dist"
 git pull
-echo "Updating git modules..."
-find modules/ -type d -name ".git" -execdir git pull --quiet \;
-mkdir -p build && cd build
-cmake .. -G Ninja \
--DCMAKE_INSTALL_PREFIX="$DIR" \
--DSCRIPTS=static \
--DMODULES=static \
--DWITH_WARNINGS=0
-ninja -j10
-ninja install
+git submodule init
+git submodule update
+rm -rf build
+mkdir build
+cd build
+cmake ../ \
+    -DSCRIPTS=static \
+    -DCMAKE_INSTALL_PREFIX=/home/luc/servercores/azerothcore/env/dist/ \
+    -DWITH_WARNINGS=0 \
+    -DTOOLS_BUILD=all \
+    -DSCRIPTS=static \
+    -DMODULES=static
+make -j 10
+sudo make install

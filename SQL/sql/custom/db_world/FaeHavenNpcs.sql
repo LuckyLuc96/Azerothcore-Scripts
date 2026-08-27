@@ -12,8 +12,8 @@ INSERT INTO `gameobject` (guid, id, map, zoneId, areaId, spawnMask, phaseMask, p
 -- Dalaran portals in Stormwind and Orgrimmar (Mage quarters and valley of spirits)
 DELETE from `gameobject` where `id` = 202079 AND `map` = 1 OR `id` = 202079 AND `map` = 0;
 INSERT INTO `gameobject` (guid, id, map, zoneId, areaId, spawnMask, phaseMask, position_x, position_y, position_z, orientation, rotation0, rotation1, rotation2, rotation3, spawntimesecs, animprogress, state, ScriptName, VerifiedBuild, Comment) VALUES
-(@guidStartGameObject + 3, 202079, 1, 0, 0, 1, 1, 1462.23, -4185.91, 44.3303, 5.88119, 0, 0, 0.199648, -0.979868, 300, 0, 1, NULL, 'Dalaran Portal: Mage Quarters')
-(@guidStartGameObject + 4, 202079, 0, 0, 0, 1, 1, -9024.95, 880.566, 29.6206, 6.21387, 0, 0, 0.0346531, -0.999399, 300, 0, 1, NULL, 'Dalaran Portal: Valley of Spirits')
+(@guidStartGameObject + 3, 202079, 1, 0, 0, 1, 1, 1462.23, -4185.91, 44.3303, 5.88119, 0, 0, 0.199648, -0.979868, 300, 0, 1, "", NULL, "Dalaran Portal: Mage Quarters"),
+(@guidStartGameObject + 4, 202079, 0, 0, 0, 1, 1, -9024.95, 880.566, 29.6206, 6.21387, 0, 0, 0.0346531, -0.999399, 300, 0, 1, "", NULL, "Dalaran Portal: Valley of Spirits");
 
 -- NPCs
 --
@@ -31,3 +31,4 @@ INSERT INTO `creature` (guid, id1, id2, id3, map, zoneId, areaId, spawnMask, pha
 (@guidStartCreatures + 9, 190011, 0, 0, 530, 0, 0, 1, 1, 0, 9700.6, -7374.21, 11.9159, 2.83384, 300, 0, 0, 12600, 0, 0, 0, 0, 0, "", NULL, 0, NULL),
 (@guidStartCreatures + 10, 190011, 0, 0, 530, 0, 0, 1, 1, 0, -1814.18, 5451.54, 2.56529, 3.72526, 300, 0, 0, 12600, 0, 0, 0, 0, 0, "", NULL, 0, NULL),
 (@guidStartCreatures + 11, 190011, 0, 0, 571, 0, 0, 1, 1, 0, 5836.68, 651.148, 647.513, 0.115326, 300, 0, 0, 12600, 0, 0, 0, 0, 0, "", NULL, 0, NULL);
+

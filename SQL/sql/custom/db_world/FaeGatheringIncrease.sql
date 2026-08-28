@@ -3,51 +3,329 @@
 -- | Entry | Item | Reference | Chance | QuestRequired | LootMode | GroupId | MinCount | MaxCount | Comment
 
 -- MINING, Classic
-select * from gameobject_loot_template WHERE Comment LIKE '%Copper Vein%';
-select * from gameobject_loot_template WHERE Comment LIKE '%Tin Vein%';
-select * from gameobject_loot_template WHERE Comment LIKE '%Silver Vein%';
-select * from gameobject_loot_template WHERE Comment LIKE '%Gold Vein%';
-select * from gameobject_loot_template WHERE Comment LIKE '%Iron Deposit%';
-select * from gameobject_loot_template WHERE Comment LIKE '%Mithril Deposit%';
-select * from gameobject_loot_template WHERE Comment LIKE '%Truesilver Deposit%';
-select * from gameobject_loot_template WHERE Comment LIKE '%Thorium Vein%';
+-- Most nodes increased from 1-4 drop (base mineral) to 2-6
+UPDATE gameobject_loot_template
+SET
+MinCount = 2,
+MaxCount = 6
+WHERE Comment LIKE '%Copper Vein%' AND MinCount = 1 AND MaxCount = 4;
+
+UPDATE gameobject_loot_template
+SET
+MinCount = 2,
+MaxCount = 6
+WHERE Comment LIKE '%Tin Vein%' AND MinCount = 1 AND MaxCount = 4;
+
+UPDATE gameobject_loot_template
+SET
+MaxCount = 6
+WHERE Comment LIKE '%Silver Vein%' AND MinCount = 2 AND MaxCount = 4;
+
+UPDATE gameobject_loot_template
+SET
+MaxCount = 6
+WHERE Comment LIKE '%Gold Vein%' AND MinCount = 2 AND MaxCount = 4;
+
+UPDATE gameobject_loot_template
+SET
+MinCount = 2,
+MaxCount = 6
+WHERE Comment LIKE '%Iron Deposit%' AND MinCount = 1 AND MaxCount = 4;
+
+UPDATE gameobject_loot_template
+SET
+MinCount = 2,
+MaxCount = 6
+WHERE Comment LIKE '%Mithril Deposit%' AND MinCount = 1 AND MaxCount = 4;
+
+UPDATE gameobject_loot_template
+SET
+MaxCount = 6
+WHERE Comment LIKE '%Truesilver Deposit%' AND MinCount = 2 AND MaxCount = 4;
+
+UPDATE gameobject_loot_template
+SET
+MinCount = 2,
+MaxCount = 4
+WHERE Comment LIKE '%Small Thorium Vein%' AND MinCount = 1 AND MaxCount = 3;
+
+UPDATE gameobject_loot_template
+SET
+MinCount = 4,
+MaxCount = 6
+WHERE Comment LIKE '%Rich Thorium Vein%' AND MinCount = 3 AND MaxCount = 5;
 
 -- Herbalism, Classic
-select * from gameobject_loot_template WHERE Comment LIKE '%Peacebloom - Peacebloom%';
-select * from gameobject_loot_template WHERE Comment LIKE '%Silverleaf - Silverleaf%';
-select * from gameobject_loot_template WHERE Comment LIKE '%Earthroot - Earthroot%';
-select * from gameobject_loot_template WHERE Comment LIKE '%Mageroyal - Mageroyal%';
-select * from gameobject_loot_template WHERE Comment LIKE '%Briarthorn - Briarthorn%';
-select * from gameobject_loot_template WHERE Comment LIKE '%Stranglekelp - Stranglekelp%';
-select * from gameobject_loot_template WHERE Comment LIKE '%Bruiseweed - Bruiseweed%';
-select * from gameobject_loot_template WHERE Comment LIKE '%Wild Steelbloom - Wild Steelbloom%';
-select * from gameobject_loot_template WHERE Comment LIKE '%Kingsblood - Kingsblood%';
-select * from gameobject_loot_template WHERE Comment LIKE '%Liferoot - Liferoot%';
-select * from gameobject_loot_template WHERE Comment LIKE '%Fadeleaf - Fadeleaf%';
-select * from gameobject_loot_template WHERE Comment LIKE '%Goldthorn - Goldthorn%';
-select * from gameobject_loot_template WHERE Comment LIKE "%Khadgar's Whisker - Khadgar's Whisker%";
-select * from gameobject_loot_template WHERE Comment LIKE '%Purple Lotus - Purple Lotus%';
-select * from gameobject_loot_template WHERE Comment LIKE '%Firebloom - Firebloom%';
-select * from gameobject_loot_template WHERE Comment LIKE '%Sungrass - Sungrass%';
-select * from gameobject_loot_template WHERE Comment LIKE '%Ghost Mushroom - Ghost Mushroom%';
-select * from gameobject_loot_template WHERE Comment LIKE '%Golden Sansam - Golden Sansam%';
-select * from gameobject_loot_template WHERE Comment LIKE '%Gromsblood - Gromsblood%';
-select * from gameobject_loot_template WHERE Comment LIKE '%Dreamfoil - Dreamfoil%';
-select * from gameobject_loot_template WHERE Comment LIKE '%Mountain Silversage - Mountain Silversage%';
-select * from gameobject_loot_template WHERE Comment LIKE '%Plaguebloom - Plaguebloom%';
+-- All nodes increased from 1-3 drop (base flower) to 2-4
+UPDATE gameobject_loot_template
+SET
+MinCount = 2,
+MaxCount = 4
+WHERE Comment LIKE '%Peacebloom - Peacebloom%' AND MinCount = 1 AND MaxCount = 3;
+
+UPDATE gameobject_loot_template
+SET
+MinCount = 2,
+MaxCount = 4
+WHERE Comment LIKE '%Silverleaf - Silverleaf%' AND MinCount = 1 AND MaxCount = 3;
+
+UPDATE gameobject_loot_template
+SET
+MinCount = 2,
+MaxCount = 4
+WHERE Comment LIKE '%Earthroot - Earthroot%' AND MinCount = 1 AND MaxCount = 3;
+
+UPDATE gameobject_loot_template
+SET
+MinCount = 2,
+MaxCount = 4
+WHERE Comment LIKE '%Mageroyal - Mageroyal%' AND MinCount = 1 AND MaxCount = 3;
+UPDATE gameobject_loot_template
+SET
+MinCount = 2,
+MaxCount = 4
+WHERE Comment LIKE '%Briarthorn - Briarthorn%' AND MinCount = 1 AND MaxCount = 3;
+UPDATE gameobject_loot_template
+SET
+MinCount = 2,
+MaxCount = 4
+WHERE Comment LIKE '%Stranglekelp - Stranglekelp%' AND MinCount = 1 AND MaxCount = 3;
+UPDATE gameobject_loot_template
+SET
+MinCount = 2,
+MaxCount = 4
+WHERE Comment LIKE '%Bruiseweed - Bruiseweed%' AND MinCount = 1 AND MaxCount = 3;
+UPDATE gameobject_loot_template
+SET
+MinCount = 2,
+MaxCount = 4
+WHERE Comment LIKE '%Wild Steelbloom - Wild Steelbloom%' AND MinCount = 1 AND MaxCount = 3;
+UPDATE gameobject_loot_template
+SET
+MinCount = 2,
+MaxCount = 4
+WHERE Comment LIKE '%Kingsblood - Kingsblood%' AND MinCount = 1 AND MaxCount = 3;
+UPDATE gameobject_loot_template
+SET
+MinCount = 2,
+MaxCount = 4
+WHERE Comment LIKE '%Liferoot - Liferoot%' AND MinCount = 1 AND MaxCount = 3;
+UPDATE gameobject_loot_template
+SET
+MinCount = 2,
+MaxCount = 4
+WHERE Comment LIKE '%Fadeleaf - Fadeleaf%' AND MinCount = 1 AND MaxCount = 3;
+UPDATE gameobject_loot_template
+SET
+MinCount = 2,
+MaxCount = 4
+WHERE Comment LIKE '%Goldthorn - Goldthorn%' AND MinCount = 1 AND MaxCount = 3;
+UPDATE gameobject_loot_template
+SET
+MinCount = 2,
+MaxCount = 4
+WHERE Comment LIKE "%Khadgar's Whisker - Khadgar's Whisker%" AND MinCount = 1 AND MaxCount = 3;
+UPDATE gameobject_loot_template
+SET
+MinCount = 2,
+MaxCount = 4
+WHERE Comment LIKE '%Purple Lotus - Purple Lotus%' AND MinCount = 1 AND MaxCount = 3;
+UPDATE gameobject_loot_template
+SET
+MinCount = 2,
+MaxCount = 4
+WHERE Comment LIKE '%Firebloom - Firebloom%' AND MinCount = 1 AND MaxCount = 3;
+UPDATE gameobject_loot_template
+SET
+MinCount = 2,
+MaxCount = 4
+WHERE Comment LIKE '%Sungrass - Sungrass%' AND MinCount = 1 AND MaxCount = 3;
+UPDATE gameobject_loot_template
+SET
+MinCount = 2,
+MaxCount = 4
+WHERE Comment LIKE '%Ghost Mushroom - Ghost Mushroom%' AND MinCount = 1 AND MaxCount = 3;
+UPDATE gameobject_loot_template
+SET
+MinCount = 2,
+MaxCount = 4
+WHERE Comment LIKE '%Golden Sansam - Golden Sansam%' AND MinCount = 1 AND MaxCount = 3;
+UPDATE gameobject_loot_template
+SET
+MinCount = 2,
+MaxCount = 4
+WHERE Comment LIKE '%Gromsblood - Gromsblood%' AND MinCount = 1 AND MaxCount = 3;
+UPDATE gameobject_loot_template
+SET
+MinCount = 2,
+MaxCount = 4
+WHERE Comment LIKE '%Dreamfoil - Dreamfoil%' AND MinCount = 1 AND MaxCount = 3;
+UPDATE gameobject_loot_template
+SET
+MinCount = 2,
+MaxCount = 4
+WHERE Comment LIKE '%Mountain Silversage - Mountain Silversage%' AND MinCount = 1 AND MaxCount = 3;
+UPDATE gameobject_loot_template
+SET
+MinCount = 2,
+MaxCount = 4
+WHERE Comment LIKE '%Plaguebloom - Plaguebloom%' AND MinCount = 1 AND MaxCount = 3;
 
 -- TBC
-select * from gameobject_loot_template WHERE Comment LIKE '%Fel Iron Deposit%';
-select * from gameobject_loot_template WHERE Comment LIKE '%Adamantite Deposit%';
-select * from gameobject_loot_template WHERE Comment LIKE '%Khorium Deposit%';
+UPDATE gameobject_loot_template
+SET
+MinCount = 3,
+MaxCount = 7
+WHERE Comment LIKE '%Fel Iron Deposit%' AND MinCount = 2 AND MaxCount = 4;
 
-select * from gameobject_loot_template WHERE Comment LIKE '%Felweed%';
-select * from gameobject_loot_template WHERE Comment LIKE '%Dreaming Glory%';
-select * from gameobject_loot_template WHERE Comment LIKE '%Ragveil%';
-select * from gameobject_loot_template WHERE Comment LIKE '%Terocone%';
-select * from gameobject_loot_template WHERE Comment LIKE '%Ancient Lichen%';
-select * from gameobject_loot_template WHERE Comment LIKE '%Netherbloom%';
-select * from gameobject_loot_template WHERE Comment LIKE '%Nightmare Vine%';
-select * from gameobject_loot_template WHERE Comment LIKE '%Mana Thistle%';
+UPDATE gameobject_loot_template
+SET
+MinCount = 3,
+MaxCount = 5
+WHERE Comment LIKE '%Adamantite Deposit%' AND MinCount = 2 AND MaxCount = 4;
 
--- WotLK
+UPDATE gameobject_loot_template
+SET
+MinCount = 6,
+MaxCount = 8
+WHERE Comment LIKE '%Rich Adamantite Deposit%' AND MinCount = 5 AND MaxCount = 7;
+
+UPDATE gameobject_loot_template
+SET
+MinCount = 3,
+MaxCount = 5
+WHERE Comment LIKE '%Khorium Vein%' AND MinCount = 2 AND MaxCount = 4;
+
+-- Eternium Ore from Khorium veins
+UPDATE gameobject_loot_template
+SET
+MinCount = 2,
+MaxCount = 4
+WHERE Comment LIKE '%Khorium Vein%' AND MinCount = 1 AND MaxCount = 3;
+
+UPDATE gameobject_loot_template
+SET
+MinCount = 2,
+MaxCount = 5
+WHERE Comment LIKE '%Felweed%' AND MinCount = 1 AND MaxCount = 3;
+
+UPDATE gameobject_loot_template
+SET
+MinCount = 2,
+MaxCount = 4
+WHERE Comment LIKE '%Dreaming Glory%' AND MinCount = 1 AND MaxCount = 3;
+
+UPDATE gameobject_loot_template
+SET
+MinCount = 2,
+MaxCount = 4
+WHERE Comment LIKE '%Ragveil%' AND MinCount = 1 AND MaxCount = 3;
+
+UPDATE gameobject_loot_template
+SET
+MinCount = 2,
+MaxCount = 4
+WHERE Comment LIKE '%Terocone%' AND MinCount = 1 AND MaxCount = 3;
+
+UPDATE gameobject_loot_template
+SET
+MinCount = 2,
+MaxCount = 4
+WHERE Comment LIKE '%Ancient Lichen%' AND MinCount = 1 AND MaxCount = 3;
+
+UPDATE gameobject_loot_template
+SET
+MinCount = 2,
+MaxCount = 4
+WHERE Comment LIKE '%Netherbloom%' AND MinCount = 1 AND MaxCount = 3;
+
+UPDATE gameobject_loot_template
+SET
+MinCount = 2,
+MaxCount = 4
+WHERE Comment LIKE '%Nightmare Vine%' AND MinCount = 1 AND MaxCount = 3;
+
+UPDATE gameobject_loot_template
+SET
+MinCount = 2,
+MaxCount = 4
+WHERE Comment LIKE '%Mana Thistle%' AND MinCount = 1 AND MaxCount = 3;
+
+
+UPDATE gameobject_loot_template
+SET
+MinCount = 3,
+MaxCount = 6
+WHERE Comment LIKE '%Cobalt Deposit%' AND MinCount = 2 AND MaxCount = 4;
+
+UPDATE gameobject_loot_template
+SET
+MinCount = 6,
+MaxCount = 10
+WHERE Comment LIKE '%Rich Cobalt Deposit%' AND MinCount = 4 AND MaxCount = 8;
+
+UPDATE gameobject_loot_template
+SET
+MinCount = 3,
+MaxCount = 6
+WHERE Comment LIKE '%Saronite Deposit%' AND MinCount = 2 AND MaxCount = 4;
+
+UPDATE gameobject_loot_template
+SET
+MinCount = 6,
+MaxCount = 11
+WHERE Comment LIKE '%Rich Saronite Deposit%' AND MinCount = 5 AND MaxCount = 7;
+
+UPDATE gameobject_loot_template
+SET
+MinCount = 3,
+MaxCount = 6
+WHERE Comment LIKE '%Titanium Vein%' AND MinCount = 2 AND MaxCount = 4;
+
+UPDATE gameobject_loot_template
+SET
+MinCount = 2,
+MaxCount = 4
+WHERE Comment LIKE '%Goldclover%' AND MinCount = 1 AND MaxCount = 3;
+
+UPDATE gameobject_loot_template
+SET
+MinCount = 3,
+MaxCount = 5
+WHERE Comment LIKE '%Firethorn%' AND MinCount = 2 AND MaxCount = 3;
+
+UPDATE gameobject_loot_template
+SET
+MinCount = 2,
+MaxCount = 4
+WHERE Comment LIKE '%Tiger Lily%' AND MinCount = 1 AND MaxCount = 3;
+
+UPDATE gameobject_loot_template
+SET
+MinCount = 2,
+MaxCount = 4
+WHERE Comment LIKE "%Talandra's Rose%" AND MinCount = 1 AND MaxCount = 3;
+
+UPDATE gameobject_loot_template
+SET
+MinCount = 2,
+MaxCount = 4
+WHERE Comment LIKE "%Adder's Tongue%" AND MinCount = 1 AND MaxCount = 3;
+
+UPDATE gameobject_loot_template
+SET
+MinCount = 2,
+MaxCount = 4
+WHERE Comment LIKE '%Lichbloom%' AND MinCount = 1 AND MaxCount = 3;
+
+UPDATE gameobject_loot_template
+SET
+MinCount = 2,
+MaxCount = 4
+WHERE Comment LIKE '%Icethorn%' AND MinCount = 1 AND MaxCount = 3;
+
+UPDATE gameobject_loot_template
+SET
+MinCount = 1,
+MaxCount = 3
+WHERE Comment LIKE '%Frost Lotus%' AND MinCount = 1 AND MaxCount = 1;
